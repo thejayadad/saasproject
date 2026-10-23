@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import SignOutButton from "@/_components/auth/sign-out-button";
 
 async function DashboardContent() {
   const session = await auth.api.getSession({
@@ -36,6 +37,7 @@ async function DashboardContent() {
             <p className="text-sm">
               Signed in as: {session.user.email}
             </p>
+            <SignOutButton />
           </div>
         </div>
       </div>
